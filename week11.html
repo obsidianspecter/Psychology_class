@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 11: Health Psychology</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="14a2b9d3-04c5-8023-8332-e3c14a9e931f" class="page mono"><header><h1 class="page-title">Week 11: Health Psychology</h1><p class="page-description"></p></header><div class="page-body"><h3 id="14a2b9d3-04c5-8000-b7d8-eb3edcf50887" class="">Introduction to Health Psychology</h3><p id="14a2b9d3-04c5-80d5-b1ba-dbf3d7881900" class="">Health psychology is a subfield of psychology that examines how psychological factors influence health, illness, and healthcare. It focuses on understanding the interplay between behavior, mental processes, and physical health, aiming to promote wellness and prevent illness.</p><h3 id="14a2b9d3-04c5-80ce-8021-d8d4db9be3bf" class="">The Relationship Between Psychology and Physical Health</h3><h3 id="14a2b9d3-04c5-80f9-95f8-f7349d01daa1" class="">1. Biopsychosocial Model</h3><ul id="14a2b9d3-04c5-80fc-a044-da1110a10a58" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: A comprehensive model that considers biological, psychological, and social factors in understanding health and illness.</li></ul><ul id="14a2b9d3-04c5-80b1-bd21-dd4b0d029b00" class="bulleted-list"><li style="list-style-type:disc"><strong>Components</strong>:<ul id="14a2b9d3-04c5-805b-a739-fb7702df137b" class="bulleted-list"><li style="list-style-type:circle"><strong>Biological Factors</strong>: Genetics, physiology, and medical conditions.</li></ul><ul id="14a2b9d3-04c5-80f6-bfdd-d53a4d598a24" class="bulleted-list"><li style="list-style-type:circle"><strong>Psychological Factors</strong>: Emotions, thoughts, behaviors, and personality traits.</li></ul><ul id="14a2b9d3-04c5-8057-a328-f9c4d8ee3749" class="bulleted-list"><li style="list-style-type:circle"><strong>Social Factors</strong>: Cultural influences, social support systems, and socioeconomic status.</li></ul></li></ul><h3 id="14a2b9d3-04c5-80cc-af80-ff15c02fd921" class="">2. Behavioral Influences on Health</h3><ul id="14a2b9d3-04c5-8018-a8a9-eac902ab4504" class="bulleted-list"><li style="list-style-type:disc"><strong>Health Behaviors</strong>: Actions that individuals take to maintain or improve their health (e.g., diet, exercise, smoking).</li></ul><ul id="14a2b9d3-04c5-806e-8f37-ccfa702a9edf" class="bulleted-list"><li style="list-style-type:disc"><strong>Risk Behaviors</strong>: Actions that increase the likelihood of illness or injury (e.g., substance abuse, sedentary lifestyle).</li></ul><ul id="14a2b9d3-04c5-80c8-8a17-e0c92ad35d27" class="bulleted-list"><li style="list-style-type:disc">Understanding these behaviors is crucial for developing interventions aimed at promoting healthier lifestyles.</li></ul><h3 id="14a2b9d3-04c5-80b4-bee4-c933c3386637" class="">Stress Management Techniques</h3><h3 id="14a2b9d3-04c5-8022-a1fb-cd730decfdb3" class="">1. Understanding Stress</h3><ul id="14a2b9d3-04c5-800b-8225-cdc7b150eb35" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: A psychological and physiological response to perceived threats or challenges (stressors).</li></ul><ul id="14a2b9d3-04c5-8042-b28b-ef35b08bd90a" class="bulleted-list"><li style="list-style-type:disc"><strong>Types of Stressors</strong>:<ul id="14a2b9d3-04c5-80b0-bcbd-e24f4e113726" class="bulleted-list"><li style="list-style-type:circle"><strong>Acute Stressors</strong>: Short-term events that cause immediate stress (e.g., exams, job interviews).</li></ul><ul id="14a2b9d3-04c5-80e5-a54e-efd1d5a8d777" class="bulleted-list"><li style="list-style-type:circle"><strong>Chronic Stressors</strong>: Long-term situations that can lead to ongoing stress (e.g., financial difficulties, chronic illness).</li></ul></li></ul><h3 id="14a2b9d3-04c5-802b-b1ad-fb60c772e241" class="">2. Effects of Stress on Health</h3><ul id="14a2b9d3-04c5-80c7-a4b4-cc9d3b2a687f" class="bulleted-list"><li style="list-style-type:disc">Chronic stress can lead to various health problems, including cardiovascular disease, weakened immune function, anxiety disorders, and depression.</li></ul><ul id="14a2b9d3-04c5-8060-93f9-e6951a4a77f9" class="bulleted-list"><li style="list-style-type:disc">The body&#x27;s stress response involves the release of hormones such as cortisol and adrenaline, which prepare the body for &quot;fight or flight&quot; but can be harmful when activated continuously.</li></ul><h3 id="14a2b9d3-04c5-8089-9218-c7cad0cfa668" class="">3. Stress Management Techniques</h3><ul id="14a2b9d3-04c5-80c1-b793-e8d94f0d3470" class="bulleted-list"><li style="list-style-type:disc"><strong>Cognitive-Behavioral Techniques</strong>:<ul id="14a2b9d3-04c5-80ae-8729-cefd484d2bb4" class="bulleted-list"><li style="list-style-type:circle">Reframing negative thoughts to reduce stress.</li></ul><ul id="14a2b9d3-04c5-8032-942a-ccbe208c8e70" class="bulleted-list"><li style="list-style-type:circle">Setting realistic goals and problem-solving strategies.</li></ul></li></ul><ul id="14a2b9d3-04c5-80fc-ab5a-ca3bd395d74f" class="bulleted-list"><li style="list-style-type:disc"><strong>Relaxation Techniques</strong>:<ul id="14a2b9d3-04c5-8038-a863-f16a2439cbef" class="bulleted-list"><li style="list-style-type:circle"><strong>Mindfulness Meditation</strong>: Focusing on the present moment to reduce anxiety.</li></ul><ul id="14a2b9d3-04c5-80a0-b510-e5a5dc550162" class="bulleted-list"><li style="list-style-type:circle"><strong>Deep Breathing Exercises</strong>: Promoting relaxation through controlled breathing.</li></ul></li></ul><ul id="14a2b9d3-04c5-805f-8373-f80ff4fc316d" class="bulleted-list"><li style="list-style-type:disc"><strong>Physical Activity</strong>: Regular exercise can help reduce stress levels by releasing endorphins and improving mood.</li></ul><h3 id="14a2b9d3-04c5-8004-95b8-d9923a2857f5" class="">Coping Strategies for Mental Well-Being</h3><h3 id="14a2b9d3-04c5-803b-a273-dccddf04f649" class="">1. Coping Mechanisms</h3><ul id="14a2b9d3-04c5-80bd-8230-d1830a080dd9" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: Strategies used to manage stress and difficult emotions.</li></ul><ul id="14a2b9d3-04c5-8028-acd9-d3f89a567fd2" class="bulleted-list"><li style="list-style-type:disc">Types of coping strategies:<ul id="14a2b9d3-04c5-8070-b8b2-d72d82cc7e5b" class="bulleted-list"><li style="list-style-type:circle"><strong>Problem-Focused Coping</strong>: Addressing the problem causing stress directly (e.g., time management).</li></ul><ul id="14a2b9d3-04c5-8048-8d43-f13132518269" class="bulleted-list"><li style="list-style-type:circle"><strong>Emotion-Focused Coping</strong>: Managing emotional responses to stress (e.g., seeking social support).</li></ul></li></ul><h3 id="14a2b9d3-04c5-8050-9383-faa152353e99" class="">2. Positive Psychology Interventions</h3><ul id="14a2b9d3-04c5-809a-a364-ebcaf7e905a0" class="bulleted-list"><li style="list-style-type:disc">Emphasizing strengths and positive aspects of life can enhance mental well-being. Techniques include:<ul id="14a2b9d3-04c5-8036-8754-dfdf155ae179" class="bulleted-list"><li style="list-style-type:circle">Practicing gratitude (keeping a gratitude journal).</li></ul><ul id="14a2b9d3-04c5-80dc-a249-d0a072ba5003" class="bulleted-list"><li style="list-style-type:circle">Engaging in acts of kindness.</li></ul></li></ul><h3 id="14a2b9d3-04c5-80ef-9465-e71d37b48db1" class="">3. Social Support</h3><ul id="14a2b9d3-04c5-802c-8b84-e78dde6a9a10" class="bulleted-list"><li style="list-style-type:disc">The presence of supportive relationships can buffer against stress and improve health outcomes. Strategies include:<ul id="14a2b9d3-04c5-8090-8b40-ca85070bc87f" class="bulleted-list"><li style="list-style-type:circle">Building strong social networks.</li></ul><ul id="14a2b9d3-04c5-80c2-b28c-f33fcd1fdce1" class="bulleted-list"><li style="list-style-type:circle">Seeking help from friends or family during challenging times.</li></ul></li></ul><h3 id="14a2b9d3-04c5-80f7-81fd-faf81faa4cb0" class="">Applications in Social Psychology</h3><p id="14a2b9d3-04c5-8023-8906-c960df666d91" class="">Understanding health psychology helps address public health issues by promoting awareness of how psychological factors influence health behaviors and outcomes. It also informs interventions aimed at reducing stigma around mental health issues.</p><h3 id="14a2b9d3-04c5-80f9-8947-c8c05da3c2ed" class="">Applications in Industrial Psychology</h3><p id="14a2b9d3-04c5-80fe-b457-ce0e6bcba5f5" class="">In organizational settings:</p><ul id="14a2b9d3-04c5-801c-9729-c1835fc06b45" class="bulleted-list"><li style="list-style-type:disc">Implementing wellness programs that incorporate stress management techniques can improve employee well-being and productivity.</li></ul><ul id="14a2b9d3-04c5-80f9-b162-f10170f4cea6" class="bulleted-list"><li style="list-style-type:disc">Understanding the impact of workplace stressors on mental health can lead to better management practices.</li></ul><h3 id="14a2b9d3-04c5-8022-8e4a-ee2a3da7db4b" class="">Suggested Readings</h3><ol type="1" id="14a2b9d3-04c5-80b1-a878-da4a1d38a80d" class="numbered-list" start="1"><li>Taylor, S.E. (2017). <em>Health Psychology</em> (10th ed.). McGraw-Hill Education.</li></ol><ol type="1" id="14a2b9d3-04c5-8015-80e2-f13af66c5f00" class="numbered-list" start="2"><li>Ogden, J. (2019). <em>Health Psychology</em> (5th ed.). Open University Press.</li></ol><h3 id="14a2b9d3-04c5-8021-b500-cb4097c93556" class="">Discussion Questions</h3><ol type="1" id="14a2b9d3-04c5-8013-9e4f-fcbf6c5f8342" class="numbered-list" start="1"><li>How do psychological factors influence physical health outcomes?</li></ol><ol type="1" id="14a2b9d3-04c5-8076-91d5-dc828f422c20" class="numbered-list" start="2"><li>Discuss the effectiveness of different stress management techniques you have tried or observed.</li></ol><ol type="1" id="14a2b9d3-04c5-8028-8c23-c53bce13c365" class="numbered-list" start="3"><li>What role does social support play in coping with stress?</li></ol><h3 id="14a2b9d3-04c5-805d-8f02-fc6a0badac12" class="">Activities</h3><ul id="14a2b9d3-04c5-80e7-8e00-f61e47fa6297" class="bulleted-list"><li style="list-style-type:disc"><strong>Group Discussion</strong>: Have students share personal experiences with stress management techniques that have worked for them.</li></ul><ul id="14a2b9d3-04c5-8052-a1c1-c488aa634dd9" class="bulleted-list"><li style="list-style-type:disc"><strong>Mindfulness Exercise</strong>: Conduct a short mindfulness meditation session in class to introduce students to relaxation techniques.</li></ul><hr id="14a2b9d3-04c5-807f-a9c5-c6af6e83a7a8"/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

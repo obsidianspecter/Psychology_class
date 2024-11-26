@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 6: Memory</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="14a2b9d3-04c5-8005-9d86-fcbdcfd4e4e4" class="page mono"><header><h1 class="page-title">Week 6: Memory</h1><p class="page-description"></p></header><div class="page-body"><h3 id="14a2b9d3-04c5-80fb-939d-ddd6e71fd1b1" class="">Introduction to Memory</h3><p id="14a2b9d3-04c5-80c7-a27e-cb832db82bef" class="">Memory is the mental process of encoding, storing, and retrieving information. It is essential for learning and influences our ability to function in daily life. Understanding how memory works can help improve learning strategies and address memory-related issues.</p><h3 id="14a2b9d3-04c5-8040-8c25-f529ecef8f4b" class="">Models of Memory</h3><h3 id="14a2b9d3-04c5-80b3-a920-f6ef879fd60f" class="">1. Multi-Store Model of Memory</h3><p id="14a2b9d3-04c5-80ee-adf1-cf929cdfe840" class="">The multi-store model, proposed by Atkinson and Shiffrin, describes memory as consisting of three distinct stores:</p><ul id="14a2b9d3-04c5-8063-968a-c05cac315cdb" class="bulleted-list"><li style="list-style-type:disc"><strong>Sensory Memory</strong>:<ul id="14a2b9d3-04c5-8081-a8cb-f49c52158bcc" class="bulleted-list"><li style="list-style-type:circle">Duration: Very brief (milliseconds to seconds).</li></ul><ul id="14a2b9d3-04c5-8050-8c97-c92d4e99e1c0" class="bulleted-list"><li style="list-style-type:circle">Capacity: Large but fleeting; holds sensory information just long enough for it to be processed.</li></ul><ul id="14a2b9d3-04c5-80e3-8b79-d9f45f95095e" class="bulleted-list"><li style="list-style-type:circle">Example: The brief retention of visual images after looking away from a scene.</li></ul></li></ul><ul id="14a2b9d3-04c5-8009-bdae-c2748304a6b7" class="bulleted-list"><li style="list-style-type:disc"><strong>Short-Term Memory (STM)</strong>:<ul id="14a2b9d3-04c5-80fc-90fa-d615f76446f5" class="bulleted-list"><li style="list-style-type:circle">Duration: About 15-30 seconds without rehearsal.</li></ul><ul id="14a2b9d3-04c5-80a8-989e-d844e38a6d85" class="bulleted-list"><li style="list-style-type:circle">Capacity: Limited (7 ± 2 items, as proposed by Miller).</li></ul><ul id="14a2b9d3-04c5-805f-b5f5-ebd68c8b7ca2" class="bulleted-list"><li style="list-style-type:circle">Function: Holds information temporarily for processing and manipulation.</li></ul><ul id="14a2b9d3-04c5-80c6-8164-f92942b24117" class="bulleted-list"><li style="list-style-type:circle">Example: Remembering a phone number long enough to dial it.</li></ul></li></ul><ul id="14a2b9d3-04c5-809d-84ae-e1c46ad37653" class="bulleted-list"><li style="list-style-type:disc"><strong>Long-Term Memory (LTM)</strong>:<ul id="14a2b9d3-04c5-805d-857f-f709f0bd2b58" class="bulleted-list"><li style="list-style-type:circle">Duration: Potentially unlimited; can last from minutes to a lifetime.</li></ul><ul id="14a2b9d3-04c5-8095-bca3-fd6e18cc8511" class="bulleted-list"><li style="list-style-type:circle">Capacity: Vast; stores information that has been encoded through rehearsal or meaningful association.</li></ul><ul id="14a2b9d3-04c5-80e8-887e-e2f5f5f570fa" class="bulleted-list"><li style="list-style-type:circle">Example: Recalling your first day at school years later.</li></ul></li></ul><h3 id="14a2b9d3-04c5-8088-b1b8-dbeadbad46ed" class="">2. Working Memory Model</h3><p id="14a2b9d3-04c5-8006-80ff-c30ce546f3d6" class="">Proposed by Baddeley and Hitch, the working memory model expands on short-term memory by describing it as an active processing system with multiple components:</p><ul id="14a2b9d3-04c5-808b-8789-e492bcfea649" class="bulleted-list"><li style="list-style-type:disc"><strong>Central Executive</strong>: The control center that directs attention and coordinates activities among the subsystems.</li></ul><ul id="14a2b9d3-04c5-8027-8c31-f74e33eff270" class="bulleted-list"><li style="list-style-type:disc"><strong>Phonological Loop</strong>: Processes auditory information and verbal material.</li></ul><ul id="14a2b9d3-04c5-80e2-a0d9-ffcb154c78b9" class="bulleted-list"><li style="list-style-type:disc"><strong>Visuospatial Sketchpad</strong>: Handles visual and spatial information.</li></ul><ul id="14a2b9d3-04c5-803c-8fce-ec3b4782a6fb" class="bulleted-list"><li style="list-style-type:disc"><strong>Episodic Buffer</strong>: Integrates information from different sources into a coherent episode.</li></ul><h3 id="14a2b9d3-04c5-80f9-965f-f1d3cca5ed80" class="">Types of Memory</h3><h3 id="14a2b9d3-04c5-80c6-9272-cb0784466cf9" class="">1. Explicit (Declarative) Memory</h3><ul id="14a2b9d3-04c5-804e-a614-fc9db5264176" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: Memory that requires conscious thought; includes facts and events.</li></ul><ul id="14a2b9d3-04c5-8090-9368-ccc6eb1f90fe" class="bulleted-list"><li style="list-style-type:disc"><strong>Subtypes</strong>:<ul id="14a2b9d3-04c5-80ad-ae25-d4ce91888a5b" class="bulleted-list"><li style="list-style-type:circle"><strong>Episodic Memory</strong>: Personal experiences and specific events (e.g., your last birthday party).</li></ul><ul id="14a2b9d3-04c5-8043-9774-d437b0d6fb33" class="bulleted-list"><li style="list-style-type:circle"><strong>Semantic Memory</strong>: General knowledge and facts about the world (e.g., Paris is the capital of France).</li></ul></li></ul><h3 id="14a2b9d3-04c5-80b9-8797-c7979850fec3" class="">2. Implicit (Non-declarative) Memory</h3><ul id="14a2b9d3-04c5-80fd-885e-effe545d1684" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: Memory that does not require conscious thought; involves skills and conditioned responses.</li></ul><ul id="14a2b9d3-04c5-8090-b048-e4eed93bd3af" class="bulleted-list"><li style="list-style-type:disc"><strong>Subtypes</strong>:<ul id="14a2b9d3-04c5-8073-84d9-fc151cfb6309" class="bulleted-list"><li style="list-style-type:circle"><strong>Procedural Memory</strong>: Skills and actions (e.g., riding a bike).</li></ul><ul id="14a2b9d3-04c5-8054-9876-f7b371425025" class="bulleted-list"><li style="list-style-type:circle"><strong>Priming</strong>: Exposure to one stimulus influences response to another stimulus (e.g., hearing the word &quot;yellow&quot; may make you recognize the word &quot;banana&quot; faster).</li></ul></li></ul><h3 id="14a2b9d3-04c5-809f-b179-c8fb42b5ee31" class="">Factors Affecting Memory Retention and Recall</h3><h3 id="14a2b9d3-04c5-806c-8ceb-e57da8c1b289" class="">1. Encoding Strategies</h3><ul id="14a2b9d3-04c5-802a-8751-e023fafd3125" class="bulleted-list"><li style="list-style-type:disc"><strong>Rehearsal</strong>: Repeating information to enhance retention (e.g., studying flashcards).</li></ul><ul id="14a2b9d3-04c5-80ca-985e-d43e53b1ce5d" class="bulleted-list"><li style="list-style-type:disc"><strong>Elaborative Rehearsal</strong>: Connecting new information with existing knowledge for deeper processing (e.g., creating a story with new vocabulary words).</li></ul><h3 id="14a2b9d3-04c5-80ff-91e2-d524a1819857" class="">2. Contextual Cues</h3><ul id="14a2b9d3-04c5-8078-9d02-f72531ae61ad" class="bulleted-list"><li style="list-style-type:disc">The environment in which learning occurs can serve as a cue for retrieval. For example, studying in the same location where you will take an exam can improve recall.</li></ul><h3 id="14a2b9d3-04c5-80fe-8494-f746746d85a4" class="">3. Emotional State</h3><ul id="14a2b9d3-04c5-806a-ab6f-c9849efd3137" class="bulleted-list"><li style="list-style-type:disc">Emotions can enhance or impair memory retention. Strong emotional experiences are often remembered more vividly due to the involvement of the amygdala in processing emotions.</li></ul><h3 id="14a2b9d3-04c5-80c2-870b-c7a989bd4b67" class="">4. Interference</h3><ul id="14a2b9d3-04c5-80ac-8357-d40c20adf575" class="bulleted-list"><li style="list-style-type:disc"><strong>Proactive Interference</strong>: Older memories interfere with the retrieval of newer memories (e.g., difficulty remembering a new phone number because of an old one).</li></ul><ul id="14a2b9d3-04c5-80af-aa06-e63b68141e17" class="bulleted-list"><li style="list-style-type:disc"><strong>Retroactive Interference</strong>: New memories disrupt the retrieval of older memories (e.g., learning a new language may interfere with recalling vocabulary from a previous language learned).</li></ul><h3 id="14a2b9d3-04c5-801b-ade4-dddb97c8664a" class="">Applications in Social Psychology</h3><p id="14a2b9d3-04c5-8073-91c9-d21353805b76" class="">Understanding memory is crucial in social psychology:</p><ul id="14a2b9d3-04c5-80f5-9242-fc60868969df" class="bulleted-list"><li style="list-style-type:disc">How eyewitness testimonies can be influenced by memory distortions or biases.</li></ul><ul id="14a2b9d3-04c5-80be-b50c-c5a09d7104c8" class="bulleted-list"><li style="list-style-type:disc">The role of collective memory in shaping group identity and social narratives.</li></ul><h3 id="14a2b9d3-04c5-80f0-a7a1-f896a4b57321" class="">Applications in Industrial Psychology</h3><p id="14a2b9d3-04c5-8025-976c-c8681ebab39a" class="">In organizational settings:</p><ul id="14a2b9d3-04c5-80bf-80aa-cb1e9a26460d" class="bulleted-list"><li style="list-style-type:disc">Training programs can be designed to enhance memory retention through effective encoding strategies.</li></ul><ul id="14a2b9d3-04c5-804f-b861-f2f1cd9946a7" class="bulleted-list"><li style="list-style-type:disc">Understanding how stress affects memory can inform employee wellness initiatives.</li></ul><h3 id="14a2b9d3-04c5-803b-ae89-fb7828e0a644" class="">Suggested Readings</h3><ol type="1" id="14a2b9d3-04c5-80ec-ac17-f3063c5d186e" class="numbered-list" start="1"><li>Eysenck, M.W., &amp; Keane, M.T. (2015). <em>Cognitive Psychology: A Student&#x27;s Handbook</em> (7th ed.). Psychology Press.</li></ol><ol type="1" id="14a2b9d3-04c5-8060-a891-fd401caca79c" class="numbered-list" start="2"><li>Baddeley, A.D., &amp; Hitch, G.J. (1974). Working memory. In <em>Psychology of Learning and Motivation</em> (Vol. 8). Academic Press.</li></ol><h3 id="14a2b9d3-04c5-802d-968b-d862f1edaf41" class="">Discussion Questions</h3><ol type="1" id="14a2b9d3-04c5-8089-8adc-da451491d875" class="numbered-list" start="1"><li>What strategies do you find most effective for improving your own memory?</li></ol><ol type="1" id="14a2b9d3-04c5-8001-bdda-ce74a140d566" class="numbered-list" start="2"><li>Discuss how understanding memory processes can impact eyewitness testimony in legal settings.</li></ol><ol type="1" id="14a2b9d3-04c5-808f-a8ba-d6a81d8f126a" class="numbered-list" start="3"><li>How do emotional experiences shape our memories?</li></ol><h3 id="14a2b9d3-04c5-805f-8f49-f743772d1161" class="">Activities</h3><ul id="14a2b9d3-04c5-80be-9cb3-d560d581b8b8" class="bulleted-list"><li style="list-style-type:disc"><strong>Memory Experiment</strong>: Conduct a simple class experiment where students memorize a list of words using different encoding strategies (e.g., rote rehearsal vs. elaborative rehearsal) and compare recall rates.</li></ul><ul id="14a2b9d3-04c5-8052-84f5-d421f4ed1803" class="bulleted-list"><li style="list-style-type:disc"><strong>Group Discussion</strong>: Have students share personal anecdotes about how context or emotion influenced their recollection of an event.</li></ul><hr id="14a2b9d3-04c5-8097-8423-f2eecf4e4c1c"/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

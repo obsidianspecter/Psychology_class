@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 8: Personality Theories</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="14a2b9d3-04c5-800c-a99e-ccebc47e2db8" class="page mono"><header><h1 class="page-title">Week 8: Personality Theories</h1><p class="page-description"></p></header><div class="page-body"><h3 id="14a2b9d3-04c5-8056-a01b-c3eebc12affc" class="">Introduction to Personality Psychology</h3><p id="14a2b9d3-04c5-8054-8cfe-f0cded7360c9" class="">Personality psychology is the study of individual differences in characteristic patterns of thinking, feeling, and behaving. Understanding personality is crucial for predicting behavior and enhancing interpersonal relationships in various contexts, including social interactions and workplace dynamics.</p><h3 id="14a2b9d3-04c5-80d8-8b84-f4739a5c479e" class="">Major Personality Theories</h3><h3 id="14a2b9d3-04c5-8026-bdc0-d80722d37983" class="">1. Psychodynamic Theory</h3><ul id="14a2b9d3-04c5-809b-92a6-cf0adce190aa" class="bulleted-list"><li style="list-style-type:disc"><strong>Founder</strong>: Sigmund Freud</li></ul><ul id="14a2b9d3-04c5-806c-bfa8-f830e87df913" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Concepts</strong>:<ul id="14a2b9d3-04c5-8001-bc61-f9ace65c0240" class="bulleted-list"><li style="list-style-type:circle"><strong>Unconscious Mind</strong>: Much of our behavior is influenced by unconscious motives and conflicts.</li></ul><ul id="14a2b9d3-04c5-808e-b9c9-e6d7a29f45f2" class="bulleted-list"><li style="list-style-type:circle"><strong>Defense Mechanisms</strong>: Strategies used by the ego to protect itself from anxiety (e.g., repression, denial, projection).</li></ul><ul id="14a2b9d3-04c5-80a8-a8f7-c4da29810adc" class="bulleted-list"><li style="list-style-type:circle"><strong>Stages of Psychosexual Development</strong>: Freud proposed that personality develops through a series of stages (oral, anal, phallic, latency, genital) where unresolved conflicts can lead to fixation.</li></ul></li></ul><h3 id="14a2b9d3-04c5-80e5-844e-c9750749af9b" class="">2. Trait Theory</h3><ul id="14a2b9d3-04c5-8059-857f-e8415cf71cb0" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Figures</strong>: Gordon Allport, Raymond Cattell, and Hans Eysenck</li></ul><ul id="14a2b9d3-04c5-8083-860f-dd0881233604" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Concepts</strong>:<ul id="14a2b9d3-04c5-8026-b5c2-e76ddd2f147d" class="bulleted-list"><li style="list-style-type:circle">Traits are consistent patterns of thoughts, feelings, and behaviors.</li></ul><ul id="14a2b9d3-04c5-8029-be5e-d05b004c5599" class="bulleted-list"><li style="list-style-type:circle"><strong>The Big Five Personality Traits</strong> (OCEAN):<ul id="14a2b9d3-04c5-8010-b2a0-e411a5866c77" class="bulleted-list"><li style="list-style-type:square"><strong>Openness</strong>: Creativity and willingness to try new things.</li></ul><ul id="14a2b9d3-04c5-80fe-8e82-fdea5831eb6f" class="bulleted-list"><li style="list-style-type:square"><strong>Conscientiousness</strong>: Organization and dependability.</li></ul><ul id="14a2b9d3-04c5-808f-a989-ea9b9ace5873" class="bulleted-list"><li style="list-style-type:square"><strong>Extraversion</strong>: Sociability and assertiveness.</li></ul><ul id="14a2b9d3-04c5-802b-b712-c8f3f19b336e" class="bulleted-list"><li style="list-style-type:square"><strong>Agreeableness</strong>: Compassion and cooperativeness.</li></ul><ul id="14a2b9d3-04c5-8059-bf4c-cca902119279" class="bulleted-list"><li style="list-style-type:square"><strong>Neuroticism</strong>: Emotional instability and anxiety.</li></ul></li></ul></li></ul><h3 id="14a2b9d3-04c5-80d9-b210-ee19ad1231de" class="">3. Humanistic Theory</h3><ul id="14a2b9d3-04c5-804b-a770-dbf8cd39cb86" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Figures</strong>: Carl Rogers and Abraham Maslow</li></ul><ul id="14a2b9d3-04c5-803e-ad58-db98487d3752" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Concepts</strong>:<ul id="14a2b9d3-04c5-8001-87cd-df4c6702fbd7" class="bulleted-list"><li style="list-style-type:circle">Emphasizes personal growth and self-actualization.</li></ul><ul id="14a2b9d3-04c5-8006-a192-cc300eb455a2" class="bulleted-list"><li style="list-style-type:circle"><strong>Self-Concept</strong>: How individuals perceive themselves; a central aspect of personality.</li></ul><ul id="14a2b9d3-04c5-80d1-8328-ece96685c036" class="bulleted-list"><li style="list-style-type:circle"><strong>Maslow&#x27;s Hierarchy of Needs</strong>: A motivational theory that outlines the stages of human needs from basic physiological needs to self-actualization.</li></ul></li></ul><h3 id="14a2b9d3-04c5-8065-8bf8-fff5e827d50d" class="">4. Social-Cognitive Theory</h3><ul id="14a2b9d3-04c5-8091-bbdb-c45470d894d0" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Figure</strong>: Albert Bandura</li></ul><ul id="14a2b9d3-04c5-805b-99e6-c6e24298fc79" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Concepts</strong>:<ul id="14a2b9d3-04c5-8088-afa5-f1006c235aed" class="bulleted-list"><li style="list-style-type:circle">Emphasizes the interaction between personal factors, behavior, and environmental influences.</li></ul><ul id="14a2b9d3-04c5-80b7-b33b-f67536c647c5" class="bulleted-list"><li style="list-style-type:circle"><strong>Reciprocal Determinism</strong>: Behavior is influenced by personal factors (beliefs, expectations) and environmental factors (social context).</li></ul><ul id="14a2b9d3-04c5-8044-8cf2-c95492e8d375" class="bulleted-list"><li style="list-style-type:circle">Observational learning plays a significant role in shaping personality.</li></ul></li></ul><h3 id="14a2b9d3-04c5-8091-b598-f12510cf1fb5" class="">Methods of Assessing Personality</h3><h3 id="14a2b9d3-04c5-80d8-828f-d57ed8727d52" class="">1. Self-Report Inventories</h3><ul id="14a2b9d3-04c5-8064-9e07-c900255ee811" class="bulleted-list"><li style="list-style-type:disc">Questionnaires where individuals report their own characteristics (e.g., Myers-Briggs Type Indicator, Minnesota Multiphasic Personality Inventory).</li></ul><ul id="14a2b9d3-04c5-8017-9731-d8436c34773c" class="bulleted-list"><li style="list-style-type:disc">Advantages: Easy to administer and analyze; provides direct insight into self-perception.</li></ul><ul id="14a2b9d3-04c5-804f-b8e4-fb3717608d9e" class="bulleted-list"><li style="list-style-type:disc">Disadvantages: Subject to bias; individuals may present themselves in a socially desirable manner.</li></ul><h3 id="14a2b9d3-04c5-801c-9051-cf4efad5c6b0" class="">2. Projective Tests</h3><ul id="14a2b9d3-04c5-8086-816b-c6bdf58b8ab5" class="bulleted-list"><li style="list-style-type:disc">Tests that require individuals to respond to ambiguous stimuli (e.g., Rorschach Inkblot Test, Thematic Apperception Test).</li></ul><ul id="14a2b9d3-04c5-80df-8233-d9b60fc0b111" class="bulleted-list"><li style="list-style-type:disc">Advantages: Can reveal unconscious thoughts and feelings; less susceptible to social desirability bias.</li></ul><ul id="14a2b9d3-04c5-80e0-94c5-f6f0c22fbf93" class="bulleted-list"><li style="list-style-type:disc">Disadvantages: Subjective interpretation; reliability and validity can be questioned.</li></ul><h3 id="14a2b9d3-04c5-8050-b748-ee9f44842ff7" class="">3. Behavioral Assessments</h3><ul id="14a2b9d3-04c5-806a-9e79-d1790961ed34" class="bulleted-list"><li style="list-style-type:disc">Observing an individual&#x27;s behavior in various situations to assess personality traits.</li></ul><ul id="14a2b9d3-04c5-8087-b1e4-eb8d14107653" class="bulleted-list"><li style="list-style-type:disc">Advantages: Provides real-world insights into behavior; can be more objective.</li></ul><ul id="14a2b9d3-04c5-803f-8d6f-e37b001e6e81" class="bulleted-list"><li style="list-style-type:disc">Disadvantages: Time-consuming; may not capture internal states or motivations.</li></ul><h3 id="14a2b9d3-04c5-809f-afad-c4321a8d99ee" class="">The Role of Culture in Personality Development</h3><p id="14a2b9d3-04c5-80e5-9b44-f497d0c891e3" class="">Culture plays a significant role in shaping personality by influencing values, norms, and behaviors. Key points include:</p><ol type="1" id="14a2b9d3-04c5-8058-b305-d9f15c23a813" class="numbered-list" start="1"><li><strong>Cultural Differences in Traits</strong>:<ul id="14a2b9d3-04c5-8040-8206-dc660b17a51b" class="bulleted-list"><li style="list-style-type:disc">Some cultures may emphasize collectivism (group harmony) over individualism (personal achievement), affecting traits such as agreeableness or conscientiousness.</li></ul></li></ol><ol type="1" id="14a2b9d3-04c5-80de-8845-d89887af79d3" class="numbered-list" start="2"><li><strong>Cultural Scripts</strong>:<ul id="14a2b9d3-04c5-807a-a4a1-cc49bf348371" class="bulleted-list"><li style="list-style-type:disc">Societal expectations dictate appropriate behaviors for different situations (e.g., gender roles), influencing personality development.</li></ul></li></ol><ol type="1" id="14a2b9d3-04c5-8097-8a5f-ec589be7167e" class="numbered-list" start="3"><li><strong>Acculturation</strong>:<ul id="14a2b9d3-04c5-80ac-9bf2-f1a58ec2f3e3" class="bulleted-list"><li style="list-style-type:disc">The process of adapting to a new culture can lead to changes in personality traits as individuals integrate new values and norms.</li></ul></li></ol><h3 id="14a2b9d3-04c5-80f1-a4b5-e521e12337b0" class="">Applications in Social Psychology</h3><p id="14a2b9d3-04c5-809e-a6b1-de4c0f9dbe4b" class="">Understanding personality theories helps explain:</p><ul id="14a2b9d3-04c5-8019-9f2f-cebff367ed02" class="bulleted-list"><li style="list-style-type:disc">How individual differences affect group dynamics and social interactions.</li></ul><ul id="14a2b9d3-04c5-8037-a6ab-c0856a54719d" class="bulleted-list"><li style="list-style-type:disc">The role of personality in shaping attitudes, beliefs, and behaviors within social contexts.</li></ul><h3 id="14a2b9d3-04c5-804d-8c8d-fbab0aeff87f" class="">Applications in Industrial Psychology</h3><p id="14a2b9d3-04c5-80e2-80b8-ffff61af34fd" class="">In organizational settings:</p><ul id="14a2b9d3-04c5-80bd-94ed-de329c04b996" class="bulleted-list"><li style="list-style-type:disc">Personality assessments can aid in hiring processes by matching candidates&#x27; traits with job requirements.</li></ul><ul id="14a2b9d3-04c5-8079-96cb-ca5446bfd5e8" class="bulleted-list"><li style="list-style-type:disc">Understanding team members&#x27; personalities can enhance collaboration and improve workplace culture.</li></ul><h3 id="14a2b9d3-04c5-80cf-893f-cc5430f12ae4" class="">Suggested Readings</h3><ol type="1" id="14a2b9d3-04c5-80e3-982c-e0ff0a4b30df" class="numbered-list" start="1"><li>Funder, D.C. (2019). <em>The Personality Puzzle</em> (7th ed.). W.W. Norton &amp; Company.</li></ol><ol type="1" id="14a2b9d3-04c5-8057-8684-c7464b618b4f" class="numbered-list" start="2"><li>McCrae, R.R., &amp; Costa, P.T. (2008). <em>The Five-Factor Theory of Personality</em>. In <em>Handbook of Personality: Theory and Research</em> (3rd ed.). Guilford Press.</li></ol><h3 id="14a2b9d3-04c5-800a-97d7-f4b87cfc852b" class="">Discussion Questions</h3><ol type="1" id="14a2b9d3-04c5-8027-ad4c-f4a447952d97" class="numbered-list" start="1"><li>How do you think your personality influences your interactions with others?</li></ol><ol type="1" id="14a2b9d3-04c5-8022-8fa4-e408343422a6" class="numbered-list" start="2"><li>Discuss the implications of cultural differences in personality traits for global business practices.</li></ol><ol type="1" id="14a2b9d3-04c5-80c7-b0ca-dd3646e7790b" class="numbered-list" start="3"><li>What are some strengths and weaknesses of using self-report inventories for assessing personality?</li></ol><h3 id="14a2b9d3-04c5-801b-a39e-d086fc2606fe" class="">Activities</h3><ul id="14a2b9d3-04c5-8008-be5b-e1cc358e59e3" class="bulleted-list"><li style="list-style-type:disc"><strong>Personality Assessment Activity</strong>: Have students complete a brief self-report inventory (e.g., Big Five assessment) and discuss their results in small groups.</li></ul><ul id="14a2b9d3-04c5-8009-a357-ed33af01c5ab" class="bulleted-list"><li style="list-style-type:disc"><strong>Role Play Exercise</strong>: In pairs, students take on different personalities based on trait theory descriptions and engage in a structured conversation to observe how traits influence communication styles.</li></ul><hr id="14a2b9d3-04c5-805e-bf61-cbb1a7bd4450"/><p id="14a2b9d3-04c5-8012-a812-fa3d18575de5" class="">This content provides a comprehensive overview for Week 8 on personality theories while highlighting their relevance to both social psychology and industrial psychology contexts. If you’re ready to proceed with Week 9 content on Social Psychology, just let me know!</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

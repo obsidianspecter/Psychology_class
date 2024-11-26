@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 10: Psychological Disorders</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="14a2b9d3-04c5-80de-a85d-ee2d56947dbb" class="page mono"><header><h1 class="page-title">Week 10: Psychological Disorders</h1><p class="page-description"></p></header><div class="page-body"><h3 id="14a2b9d3-04c5-80ed-998f-f1183642790c" class="">Introduction to Psychological Disorders</h3><p id="14a2b9d3-04c5-80c2-87ec-c9a9f5c28b1c" class="">Psychological disorders, also known as mental disorders or mental illnesses, are conditions characterized by abnormal thoughts, feelings, and behaviors that cause significant distress or impairment in functioning. Understanding psychological disorders is crucial for recognizing mental health issues and providing effective treatment.</p><h3 id="14a2b9d3-04c5-809b-9378-c5b95e9d2d6b" class="">Overview of Major Psychological Disorders</h3><h3 id="14a2b9d3-04c5-8069-942d-f53cf8085d8c" class="">1. Anxiety Disorders</h3><ul id="14a2b9d3-04c5-80d7-8290-da7eca36807c" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: Characterized by excessive fear or anxiety that interferes with daily activities.</li></ul><ul id="14a2b9d3-04c5-8096-a3e6-d72fe1ae3d48" class="bulleted-list"><li style="list-style-type:disc"><strong>Types</strong>:<ul id="14a2b9d3-04c5-80bf-8a0d-d73e9f797ccb" class="bulleted-list"><li style="list-style-type:circle"><strong>Generalized Anxiety Disorder (GAD)</strong>: Persistent and excessive worry about various aspects of life.</li></ul><ul id="14a2b9d3-04c5-80d0-945b-e92f8f024dd1" class="bulleted-list"><li style="list-style-type:circle"><strong>Panic Disorder</strong>: Recurrent panic attacks characterized by sudden onset of intense fear or discomfort.</li></ul><ul id="14a2b9d3-04c5-808b-8244-da35337c56e6" class="bulleted-list"><li style="list-style-type:circle"><strong>Social Anxiety Disorder</strong>: Intense fear of social situations where one may be judged or embarrassed.</li></ul><ul id="14a2b9d3-04c5-800e-8237-c88cc9703939" class="bulleted-list"><li style="list-style-type:circle"><strong>Specific Phobias</strong>: Irrational fears of specific objects or situations (e.g., heights, spiders).</li></ul></li></ul><h3 id="14a2b9d3-04c5-8090-813e-c8ae5897269f" class="">2. Mood Disorders</h3><ul id="14a2b9d3-04c5-80a8-a37c-c2b1f8706420" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: Disorders that primarily affect emotional state.</li></ul><ul id="14a2b9d3-04c5-807b-8b2d-da6ecd208b11" class="bulleted-list"><li style="list-style-type:disc"><strong>Types</strong>:<ul id="14a2b9d3-04c5-80ca-9f8b-c83a5601f396" class="bulleted-list"><li style="list-style-type:circle"><strong>Major Depressive Disorder</strong>: Persistent feelings of sadness, hopelessness, and loss of interest in activities.</li></ul><ul id="14a2b9d3-04c5-80be-b160-f8551a001869" class="bulleted-list"><li style="list-style-type:circle"><strong>Bipolar Disorder</strong>: Characterized by alternating episodes of depression and mania (elevated mood and energy).</li></ul></li></ul><h3 id="14a2b9d3-04c5-802f-97b3-e16488fce651" class="">3. Personality Disorders</h3><ul id="14a2b9d3-04c5-8063-9100-c161f278f2f7" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: Enduring patterns of behavior, cognition, and inner experience that deviate from cultural expectations.</li></ul><ul id="14a2b9d3-04c5-8026-9fcb-ff562ed4e11a" class="bulleted-list"><li style="list-style-type:disc"><strong>Types</strong>:<ul id="14a2b9d3-04c5-807c-b9a4-d75bc62b56cd" class="bulleted-list"><li style="list-style-type:circle"><strong>Borderline Personality Disorder</strong>: Characterized by instability in relationships, self-image, and emotions.</li></ul><ul id="14a2b9d3-04c5-80bf-a695-f5aa09b1a313" class="bulleted-list"><li style="list-style-type:circle"><strong>Antisocial Personality Disorder</strong>: Disregard for the rights of others; often involves deceitful or manipulative behavior.</li></ul></li></ul><h3 id="14a2b9d3-04c5-80b7-b8d6-c167b73cb3e6" class="">4. Psychotic Disorders</h3><ul id="14a2b9d3-04c5-8092-9b68-cca61ad2b8d6" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: Severe mental disorders characterized by a disconnection from reality.</li></ul><ul id="14a2b9d3-04c5-80dc-983e-cb52e406f9ef" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Example</strong>:<ul id="14a2b9d3-04c5-80a3-8b6f-d39b56504dd3" class="bulleted-list"><li style="list-style-type:circle"><strong>Schizophrenia</strong>: Involves hallucinations (false perceptions), delusions (false beliefs), and disorganized thinking.</li></ul></li></ul><h3 id="14a2b9d3-04c5-8030-a0b8-db84a2ecc198" class="">5. Obsessive-Compulsive and Related Disorders</h3><ul id="14a2b9d3-04c5-8079-bf9e-cd7743ad1ac5" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: Characterized by the presence of obsessions (intrusive thoughts) and compulsions (repetitive behaviors).</li></ul><ul id="14a2b9d3-04c5-8006-956c-d5514c2fefb2" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Example</strong>:<ul id="14a2b9d3-04c5-80ba-879b-faf1bddc34aa" class="bulleted-list"><li style="list-style-type:circle"><strong>Obsessive-Compulsive Disorder (OCD)</strong>: Individuals feel driven to perform certain rituals to reduce anxiety related to their obsessions.</li></ul></li></ul><h3 id="14a2b9d3-04c5-80fb-9a8d-d66f555e119e" class="">Diagnostic Criteria</h3><p id="14a2b9d3-04c5-80ee-84f4-cef96fe38a8d" class="">The Diagnostic and Statistical Manual of Mental Disorders (DSM-5) is the primary reference used by mental health professionals for diagnosing psychological disorders. Key components include:</p><ol type="1" id="14a2b9d3-04c5-8031-a768-c3654814cb70" class="numbered-list" start="1"><li><strong>Criteria Sets</strong>: Specific symptoms that must be present for a diagnosis.</li></ol><ol type="1" id="14a2b9d3-04c5-80ad-a447-f36a34be31bc" class="numbered-list" start="2"><li><strong>Duration</strong>: Symptoms must persist for a specified period.</li></ol><ol type="1" id="14a2b9d3-04c5-803e-b831-fd64d31fe538" class="numbered-list" start="3"><li><strong>Functional Impairment</strong>: Symptoms must cause significant distress or impairment in social, occupational, or other important areas of functioning.</li></ol><h3 id="14a2b9d3-04c5-8030-9f6d-e0918a9bd9c5" class="">Treatment Approaches</h3><h3 id="14a2b9d3-04c5-805a-a597-ea31bd2dbf21" class="">1. Psychotherapy</h3><ul id="14a2b9d3-04c5-80d4-a86e-c24e5459f4a1" class="bulleted-list"><li style="list-style-type:disc"><strong>Definition</strong>: A therapeutic approach that involves talking with a trained mental health professional to address emotional and psychological issues.</li></ul><ul id="14a2b9d3-04c5-80d1-a2a0-f9620cfe77a6" class="bulleted-list"><li style="list-style-type:disc"><strong>Types of Therapy</strong>:<ul id="14a2b9d3-04c5-8058-be7a-e5bcc4057f63" class="bulleted-list"><li style="list-style-type:circle"><strong>Cognitive Behavioral Therapy (CBT)</strong>: Focuses on identifying and changing negative thought patterns and behaviors.</li></ul><ul id="14a2b9d3-04c5-80a3-976e-cd5f78810462" class="bulleted-list"><li style="list-style-type:circle"><strong>Dialectical Behavior Therapy (DBT)</strong>: A form of CBT specifically designed for individuals with borderline personality disorder; emphasizes emotional regulation and interpersonal effectiveness.</li></ul><ul id="14a2b9d3-04c5-80ec-ac60-f1a830ccdf94" class="bulleted-list"><li style="list-style-type:circle"><strong>Exposure Therapy</strong>: A behavioral therapy used to treat phobias and anxiety disorders through gradual exposure to feared stimuli.</li></ul></li></ul><h3 id="14a2b9d3-04c5-80f7-a7c7-c541991926c0" class="">2. Medication</h3><ul id="14a2b9d3-04c5-80bc-bd65-e16625ecb36b" class="bulleted-list"><li style="list-style-type:disc">Medications can help manage symptoms of psychological disorders. Common classes include:<ul id="14a2b9d3-04c5-80e7-878b-c69bd6e4ed01" class="bulleted-list"><li style="list-style-type:circle"><strong>Antidepressants</strong>: Used to treat depression and anxiety disorders (e.g., SSRIs like fluoxetine).</li></ul><ul id="14a2b9d3-04c5-800d-b0ed-dacc59506256" class="bulleted-list"><li style="list-style-type:circle"><strong>Antipsychotics</strong>: Used to manage symptoms of psychosis (e.g., risperidone).</li></ul><ul id="14a2b9d3-04c5-8010-b24c-f442cd63bfe4" class="bulleted-list"><li style="list-style-type:circle"><strong>Anxiolytics</strong>: Medications that reduce anxiety (e.g., benzodiazepines).</li></ul></li></ul><h3 id="14a2b9d3-04c5-80a8-8b79-c9765d48af27" class="">3. Integrated Approaches</h3><ul id="14a2b9d3-04c5-8063-b7db-dd09c30b60b3" class="bulleted-list"><li style="list-style-type:disc">Many treatment plans combine psychotherapy and medication for a more comprehensive approach to managing psychological disorders.</li></ul><h3 id="14a2b9d3-04c5-80b7-8bce-f6f7d7cea7b9" class="">Applications in Social Psychology</h3><p id="14a2b9d3-04c5-80b4-b853-e1bb4c1bb61b" class="">Understanding psychological disorders is essential for addressing stigma and promoting mental health awareness in society. It helps in creating supportive environments for individuals with mental health issues.</p><h3 id="14a2b9d3-04c5-80d2-ad4b-ec7441869ecf" class="">Applications in Industrial Psychology</h3><p id="14a2b9d3-04c5-80e2-aa67-d020aea894b1" class="">In organizational settings:</p><ul id="14a2b9d3-04c5-80ae-92eb-ef8e478dfc3f" class="bulleted-list"><li style="list-style-type:disc">Awareness of mental health issues can inform employee assistance programs (EAPs) to support staff struggling with psychological disorders.</li></ul><ul id="14a2b9d3-04c5-8058-86f7-e475bbe83ca3" class="bulleted-list"><li style="list-style-type:disc">Understanding how stress affects mental health can lead to better workplace policies promoting well-being.</li></ul><h3 id="14a2b9d3-04c5-805a-8e52-d07e00e3cc65" class="">Suggested Readings</h3><ol type="1" id="14a2b9d3-04c5-806b-b030-e0d2de132999" class="numbered-list" start="1"><li>American Psychiatric Association. (2013). <em>Diagnostic and Statistical Manual of Mental Disorders</em> (5th ed.). Arlington, VA: American Psychiatric Publishing.</li></ol><ol type="1" id="14a2b9d3-04c5-805d-8c65-d0545afdb861" class="numbered-list" start="2"><li>Nolen-Hoeksema, S., &amp; Hilt, L.M. (2018). <em>Abnormal Psychology</em> (7th ed.). McGraw-Hill Education.</li></ol><h3 id="14a2b9d3-04c5-808f-8efd-f00303ef8d6d" class="">Discussion Questions</h3><ol type="1" id="14a2b9d3-04c5-80dc-a4b6-e478c3c216d4" class="numbered-list" start="1"><li>How can understanding psychological disorders help reduce stigma in society?</li></ol><ol type="1" id="14a2b9d3-04c5-80dd-a711-f5d853e07925" class="numbered-list" start="2"><li>Discuss the importance of early intervention in treating psychological disorders.</li></ol><ol type="1" id="14a2b9d3-04c5-8038-b3ef-e909d0dabcdb" class="numbered-list" start="3"><li>What role do cultural factors play in the diagnosis and treatment of psychological disorders?</li></ol><h3 id="14a2b9d3-04c5-807d-8192-f34c7797689b" class="">Activities</h3><ul id="14a2b9d3-04c5-803d-992a-fca420e18c96" class="bulleted-list"><li style="list-style-type:disc"><strong>Case Study Analysis</strong>: Present students with case studies illustrating various psychological disorders for discussion on symptoms, diagnosis, and potential treatment options.</li></ul><ul id="14a2b9d3-04c5-8056-a17e-c53cd692e7ee" class="bulleted-list"><li style="list-style-type:disc"><strong>Role Play Exercise</strong>: Have students role-play scenarios involving therapy sessions to understand the therapeutic process better.</li></ul><hr id="14a2b9d3-04c5-80d7-936c-c905aaa97b48"/><p id="14a2b9d3-04c5-80a4-850f-fe0f195c56a8" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
